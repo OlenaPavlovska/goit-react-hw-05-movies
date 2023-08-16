@@ -1,4 +1,4 @@
-// import css from './movie.module.css'
+import css from './movie.module.css'
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useSearchParams, useLocation } from 'react-router-dom';
 import { searchMovies } from "../api"
@@ -43,19 +43,19 @@ if (location.pathname.includes('/movies')){
         setSearchParams({query: query})
     }
     return(
-<div>
-    <h2>Search Movie</h2>
-    <input
-    
+<div className={css.container}>
+    <h2 className={css.title}>SEARCH MOVIE</h2>
+    <input 
+    className={css.input}
     type='text'
     value={search}
     onChange={(e) => setSearch(e.target.value)}
     />
-    <button onClick={()=>handleSubmitSearch(search)}>Search </button>
+    <button className={css.button} onClick={()=> handleSubmitSearch(search)}>SEARCH </button>
     {searchResule && searchPerform.length>0 ? (
 <div>
-    <h3>Search Results</h3>
-    <button onClick={onBack}>Go back</button>
+    <h3 className={css.title}>SEARCH RESULT</h3>
+    <button className={css.button} onClick={onBack}>GO BACK</button>
 
     <ul>
         {searchResule.map((movie)=>(
@@ -67,7 +67,7 @@ if (location.pathname.includes('/movies')){
     </ul>
 </div>
  ):searchPerform && searchResule.length===0?(
-<p>No movies found</p>
+<p className={css.title}>No movies found</p>
 ):null }
     </div>
  )

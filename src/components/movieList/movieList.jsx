@@ -1,4 +1,4 @@
-// import css from './movieList.module.css'
+import css from './movieList.module.css'
 import React,{ useEffect, useState } from "react"
 import { getTrendingMovies } from "../api"
 import { NavLink } from "react-router-dom"
@@ -18,14 +18,14 @@ getTrendingMovies().then((movies)=>{
 },[])
 
 return(
-    <div>
+    <div className={css.container}>
 {error && <div>{error}</div>}
-<h1>Trending Movies</h1>
+<h1 className={css.title}>TRENDING MOVIES</h1>
 
 <ul>
     {movies.map((movie)=>(
     <li key={movie.id}>
-        <NavLink to={`/movies/${movie.id}`}>
+        <NavLink className={css.list} to={`/movies/${movie.id}`}>
             {movie.title? movie.title : movie.name}
         </NavLink>
     </li>

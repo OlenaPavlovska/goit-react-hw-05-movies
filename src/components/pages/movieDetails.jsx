@@ -1,4 +1,4 @@
-// import css from './movieDetails.module.css'
+import css from './movieDetails.module.css'
 
 import { getMovieDetails } from "../api"
 import React,{ useEffect, useState } from "react"
@@ -55,23 +55,23 @@ const percentLiked = voteMiddle?(voteMiddle / 10) * 100:null
 
 return(
 <>
-<div>
-    <button type="button" onClick={onBack}>Go back</button>
+<div >
+    <button className={css.button} type="button" onClick={onBack}>GO BACK</button>
 </div>
 
-<div>
+<div className={css.container}>
 <img
 src={movieDetails.poster_path?`https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}` : defaultImg}
 alt="poster"
 width={250}/>
-<h2>{movieDetails.title ? movieDetails.title : movieDetails.name}</h2>
-<p>User score:{Math.round(percentLiked)}%</p>
+<h2 className={css.elTitle}>{movieDetails.title ? movieDetails.title : movieDetails.name}</h2>
+<p >USER SCORE:{Math.round(percentLiked)}%</p>
 <div>
-        <h2>Overview</h2>
+        <h2 className={css.elTitle}>OVERVIEW</h2>
         <p>{movieDetails.overview}</p>
       </div>
       <div>
-        <h2>Genres</h2>
+        <h2 className={css.elTitle}>GENRES</h2>
         <p>
           {movieDetails.genres &&
             movieDetails.genres.map((genre) => {
@@ -81,13 +81,13 @@ width={250}/>
       </div>
 
       <div>
-<h2>Additional information</h2>
-<ul>
-    <li>
-        <NavLink to={`/movies/${movieId}/cast`}>Cast</NavLink>
+<h2 className={css.elTitle}>ADDITIONAL INFORMATION</h2>
+<ul className={css.link}>
+    <li >
+        <NavLink className={css.elTitle} to={`/movies/${movieId}/cast`}>CAST</NavLink>
     </li>
-    <li>
-        <NavLink to={`/movies/${movieId}/reviews`}>Reviews</NavLink>
+    <li >
+        <NavLink className={css.elTitle} to={`/movies/${movieId}/reviews`}>REVIEWS</NavLink>
     </li>
 </ul>
 
@@ -98,7 +98,7 @@ width={250}/>
 
 <Routes >
 <Route path = 'cast' element={<Cast movieId={movieId} />} />
-<Route path = 'review' element  = {<Reviews movieId={movieId}/>}/>
+<Route path = 'reviews' element  = {<Reviews movieId={movieId}/>}/>
 
 </Routes>
 

@@ -1,4 +1,4 @@
-// import css from './cast.module.css'
+import css from './cast.module.css'
 
 import { getMovieCredits } from "../api"
 import { useState, useEffect }from "react"
@@ -23,8 +23,8 @@ const Cast = ({movieId}) => {
 
     const defaultImage= 'https://cdn-icons-png.flaticon.com/512/4054/4054617.png';
 return(
-    <div>
-        <h2>Cast</h2>
+    <div className={css.container}>
+        <h2 className={css.title}>Cast</h2>
         {error ? (
             <p>Error: {error}</p>):(
                 <div>

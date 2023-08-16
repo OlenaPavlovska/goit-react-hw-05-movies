@@ -1,0 +1,19 @@
+.header{
+   
+     padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgba(211, 76, 160, 0.43);
+    margin-bottom: 20px;
+}
+
+.nav{
+    display: flex;
+    gap: 40px;
+    list-style: none;
+
+}
+
+.list{
+    color:white;
+
+}
