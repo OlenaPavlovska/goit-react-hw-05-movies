@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/187.370037be.chunk.css","mappings":"AAAA,uBACI,iBACJ,CAEA,mBACI,aACJ","sources":["components/pages/cast.module.css"],"sourcesContent":[".container{\n    padding-left: 20px;\n}\n\n.title{\n    color: rgb(106, 11, 106);\n}"],"names":[],"sourceRoot":""}
