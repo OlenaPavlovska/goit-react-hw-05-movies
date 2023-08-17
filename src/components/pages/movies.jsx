@@ -52,7 +52,7 @@ if (location.pathname.includes('/movies')){
     onChange={(e) => setSearch(e.target.value)}
     />
     <button className={css.button} onClick={()=> handleSubmitSearch(search)}>SEARCH </button>
-    {searchResule && searchPerform.length>0 ? (
+    {searchPerform && searchResule.length>0 ? (
 <div>
     <h3 className={css.title}>SEARCH RESULT</h3>
     <button className={css.button} onClick={onBack}>GO BACK</button>
@@ -66,7 +66,7 @@ if (location.pathname.includes('/movies')){
        ) )}
     </ul>
 </div>
- ):searchPerform && searchResule.length===0?(
+ ):searchPerform && searchResule.length ===  0 ? (
 <p className={css.title}>No movies found</p>
 ):null }
     </div>

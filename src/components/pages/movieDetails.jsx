@@ -98,7 +98,7 @@ width={250}/>
 
 <Routes >
 <Route path = 'cast' element={<Cast movieId={movieId} />} />
-<Route path = 'reviews' element  = {<Reviews movieId={movieId}/>}/>
+<Route path = 'reviews' element  = {<Reviews movieId={movieId} />}/>
 
 </Routes>
 
